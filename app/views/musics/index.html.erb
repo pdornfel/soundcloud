@@ -1,0 +1,48 @@
+<h1>Soundcloud:</h1>
+
+<%= @embed_info['html'] %>
+
+<table>
+  <thead>
+    <tr>
+      <th>My Likes:</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @playlist.each do |track| %>
+      <tr>
+        <td><%= track.title %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hottest Tracks:</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hottest_tracks.each do |track| %>
+      <tr>
+        <td><%= track.title %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<script src="http://connect.soundcloud.com/sdk.js"></script>
+<script>
+SC.initialize({
+  client_id:
+});
+
+var track_url = 'https://soundcloud.com/axwell/adrian-lux-teenage-crime';
+SC.oEmbed(@embed_info.html, { auto_play: true }, function(oEmbed) {
+  console.log('oEmbed response: ' + oEmbed);
+});
+</script>
+

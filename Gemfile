@@ -33,6 +33,9 @@ group :doc do
 end
 
 gem  'soundcloud'
+gem 'dotenv-rails'
+gem 'pry-rails'
+gem 'ruby-oembed'
 
 
 # Use ActiveModel has_secure_password
